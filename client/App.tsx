@@ -12,6 +12,7 @@ import Placeholder from "./pages/Placeholder";
 import Turlar from "./pages/Turlar";
 import TurDetay from "./pages/TurDetay";
 import Videolar from "./pages/Videolar";
+import YatKiralama from "./pages/YatKiralama";
 
 const queryClient = new QueryClient();
 
