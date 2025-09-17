@@ -1,19 +1,10 @@
 import { MapPin, Users } from "lucide-react";
-
-export type Yacht = {
-  id: string;
-  title: string;
-  location: string;
-  price: number; // per hour or per day depending on context
-  currency?: string;
-  capacity: number;
-  image: string;
-  marina?: string;
-};
+import { Link } from "react-router-dom";
+import type { Yacht } from "./types";
 
 export function YachtCard({ y }: { y: Yacht }) {
   return (
-    <div className="overflow-hidden rounded-xl border bg-white/80 dark:bg-white/5 backdrop-blur-xl">
+    <Link to={`/yat-kiralama/${y.id}`} className="overflow-hidden rounded-xl border bg-white/80 dark:bg-white/5 backdrop-blur-xl block hover:shadow-lg transition-shadow">
       <div className="aspect-[16/10] w-full overflow-hidden">
         <img src={y.image} alt={y.title} className="h-full w-full object-cover" />
       </div>
@@ -27,6 +18,6 @@ export function YachtCard({ y }: { y: Yacht }) {
           <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {y.marina || y.location}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
