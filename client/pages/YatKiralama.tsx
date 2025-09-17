@@ -203,7 +203,7 @@ function toLabel(v: string) {
       return "Antalya";
     case "kemer":
       return "Kemer";
-    case "kalkkan":
+    case "kalkan":
       return "Kaş / Kalkan";
     case "bodrum":
       return "Bodrum";
