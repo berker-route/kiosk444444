@@ -98,7 +98,7 @@ export default function YatKiralama() {
                       <SelectContent>
                         <SelectItem value="antalya">Antalya</SelectItem>
                         <SelectItem value="kemer">Kemer</SelectItem>
-                        <SelectItem value="kalkkan">Kaş / Kalkan</SelectItem>
+                        <SelectItem value="kalkan">Kaş / Kalkan</SelectItem>
                         <SelectItem value="bodrum">Bodrum</SelectItem>
                         <SelectItem value="gocek">Göcek</SelectItem>
                         <SelectItem value="fethiye">Fethiye</SelectItem>
