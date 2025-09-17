@@ -1,7 +1,28 @@
 import { useMemo } from "react";
-import { Anchor, AnchorIcon, BadgePercent, Gauge, Ship, Sailboat, Waves, Wind, ShowerHead, Wifi, Utensils, Info, MapPin, Users } from "lucide-react";
+import {
+  Anchor,
+  AnchorIcon,
+  BadgePercent,
+  Gauge,
+  Ship,
+  Sailboat,
+  Waves,
+  Wind,
+  ShowerHead,
+  Wifi,
+  Utensils,
+  Info,
+  MapPin,
+  Users,
+} from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 
 export type FilterValue = {
@@ -29,7 +50,13 @@ const featureDefs = [
   { id: "discount", label: "İndirim", Icon: BadgePercent },
 ];
 
-export function FilterSidebar({ value, onChange }: { value: FilterValue; onChange: (v: FilterValue) => void }) {
+export function FilterSidebar({
+  value,
+  onChange,
+}: {
+  value: FilterValue;
+  onChange: (v: FilterValue) => void;
+}) {
   const min = 50;
   const max = 1000;
 
@@ -40,7 +67,10 @@ export function FilterSidebar({ value, onChange }: { value: FilterValue; onChang
     onChange({ ...value, [key]: Array.from(set) });
   };
 
-  const displayPrice = useMemo(() => `${value.price[0]}€ - ${value.price[1]}€`, [value.price]);
+  const displayPrice = useMemo(
+    () => `${value.price[0]}€ - ${value.price[1]}€`,
+    [value.price],
+  );
 
   return (
     <aside className="sticky top-4 h-[calc(100vh-2rem)] overflow-auto rounded-xl border bg-white/70 dark:bg-white/5 backdrop-blur-xl p-4 space-y-5">
@@ -76,7 +106,9 @@ export function FilterSidebar({ value, onChange }: { value: FilterValue; onChang
             max={max}
             step={5}
             value={value.price}
-            onValueChange={(v) => onChange({ ...value, price: [v[0] as number, v[1] as number] })}
+            onValueChange={(v) =>
+              onChange({ ...value, price: [v[0] as number, v[1] as number] })
+            }
           />
           <div className="mt-2 flex items-center justify-between text-xs text-slate-500">
             <span>En Düşük {min}€</span>
@@ -88,9 +120,15 @@ export function FilterSidebar({ value, onChange }: { value: FilterValue; onChang
       <div>
         <h3 className="text-sm font-semibold">Tekne Konumu</h3>
         <div className="mt-2">
-          <Select value={value.location} onValueChange={(v) => onChange({ ...value, location: v })}>
+          <Select
+            value={value.location}
+            onValueChange={(v) => onChange({ ...value, location: v })}
+          >
             <SelectTrigger>
-              <div className="flex items-center gap-2 truncate"><MapPin className="h-4 w-4 opacity-60" /><SelectValue placeholder="Tümü" /></div>
+              <div className="flex items-center gap-2 truncate">
+                <MapPin className="h-4 w-4 opacity-60" />
+                <SelectValue placeholder="Tümü" />
+              </div>
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="tum">Tümü</SelectItem>
@@ -114,7 +152,12 @@ export function FilterSidebar({ value, onChange }: { value: FilterValue; onChang
             type="number"
             min={1}
             value={value.capacity}
-            onChange={(e) => onChange({ ...value, capacity: Math.max(1, Number(e.target.value)) })}
+            onChange={(e) =>
+              onChange({
+                ...value,
+                capacity: Math.max(1, Number(e.target.value)),
+              })
+            }
             className="pl-9"
           />
         </div>
