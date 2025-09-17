@@ -30,7 +30,7 @@ export default function App() {
               <Route path="/turlar/:id" element={<TurDetay />} />
               <Route path="/transferler" element={<Placeholder />} />
               <Route path="/videolar" element={<Videolar />} />
-              <Route path="/yat-kiralama" element={<Placeholder />} />
+              <Route path="/yat-kiralama" element={<YatKiralama />} />
               <Route path="/ucak-bileti" element={<Placeholder />} />
               <Route path="/otobus-bileti" element={<Placeholder />} />
               <Route path="/destek" element={<Placeholder />} />
